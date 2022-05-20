@@ -39,7 +39,21 @@ const selectPreview = (index = 0) => {
   }
 };
 
+const getIndex = (listElement) => {
+  return Array.from(listElement.parentNode.children).indexOf(listElement);
+};
+
+const makeClickable = () => {
+  //   const list = document.querySelector("ul");
+  //   {
+  //     for(i in)list
+  //   }
+};
+
 addDataToPage();
-document
-  .querySelectorAll("li")
-  .addEventListener("click", selectPreview(1), false);
+Array.from(document.querySelector("ul").children).forEach((listElement) =>
+  //   (listElement) => console.log(listElement)
+  listElement.addEventListener("click", function () {
+    selectPreview(getIndex(this));
+  })
+);
