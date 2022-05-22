@@ -104,15 +104,23 @@ const keyboardSwitching = () => {
 /**
  *
  * @param {HTML-Element} element
+ * Gets the text value from the attribute "data-value" and sets it as the preview text
+ */
+const updateText = (element) => {
+  const text = element.getAttribute("data-value");
+  element.innerText = text;
+};
+
+/**
+ *
+ * @param {HTML-Element} element
  * Truncates the text based on the scroll-width and the client-width
  * (WARNING: CSS Dependent)
  */
 const truncateText = (
   element = document.querySelector(".selected .img-text")
 ) => {
-  const text = element.getAttribute("data-value");
-  element.innerText = text;
-  console.log(text);
+  updateText(element);
   if (element.scrollWidth > element.clientWidth) {
     const lettersToKeep =
       Math.floor((element.clientWidth / element.scrollWidth) * text.length) - 4;
@@ -127,6 +135,9 @@ const truncateText = (
   }
 };
 
+/**
+ * Allows editing the title
+ */
 const keyboardInput = () => {
   const textBox = document.querySelector(".textbox");
   textBox.addEventListener("input", function (event) {
