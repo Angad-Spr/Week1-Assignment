@@ -7,4 +7,4 @@ If you see this from github pages [click here](./src)
 
 - ~~Keyboard Events~~
 - ~~Shorten Names~~
-- Edit Names
+- ~~Edit Names~~

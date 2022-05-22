@@ -6,8 +6,8 @@ const markup = (dataInstance) => {
             <div class="preview-container">
                 <img src="${dataInstance.previewImage}">
             </div>
-            <span class="img-text">
-                ${dataInstance.title}
+            <span class="img-text" data-value="${dataInstance.title}">
+              ${dataInstance.title}
             </span> 
         </li>
 `;
@@ -53,6 +53,9 @@ const selectPreview = (index = 0) => {
   list.children[index].classList.add("selected");
   const imgLink = list.children[index].querySelector("img").getAttribute("src");
   document.querySelector(".image-container img").setAttribute("src", imgLink);
+  document.querySelector(".textbox").value = list.children[index]
+    .querySelector(".img-text")
+    .getAttribute("data-value");
 };
 
 /**
@@ -80,6 +83,12 @@ const makeClickable = () => {
  */
 const keyboardSwitching = () => {
   document.addEventListener("keydown", function (event) {
+    //While using textbox/other possible inputs.
+    if (document.activeElement.tagName == "INPUT") {
+      return;
+    }
+
+    // Check the key press
     const key = event.key;
     switch (key) {
       case "ArrowDown":
@@ -101,13 +110,14 @@ const keyboardSwitching = () => {
 const truncateText = (
   element = document.querySelector(".selected .img-text")
 ) => {
-  const text = element.innerText;
+  const text = element.getAttribute("data-value");
+  element.innerText = text;
+  console.log(text);
   if (element.scrollWidth > element.clientWidth) {
     const lettersToKeep =
       Math.floor((element.clientWidth / element.scrollWidth) * text.length) - 4;
 
     const lettersEachSide = lettersToKeep / 2;
-    console.log(lettersToKeep, lettersEachSide);
 
     const newText =
       text.substring(0, lettersEachSide) +
@@ -117,6 +127,16 @@ const truncateText = (
   }
 };
 
+const keyboardInput = () => {
+  const textBox = document.querySelector(".textbox");
+  textBox.addEventListener("input", function (event) {
+    const title = document.querySelector(".selected .img-text");
+    title.setAttribute("data-value", this.value);
+    truncateText();
+  });
+};
+
 addDataToPage();
 makeClickable();
 keyboardSwitching();
+keyboardInput();
