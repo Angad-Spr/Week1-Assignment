@@ -109,6 +109,7 @@ const keyboardSwitching = () => {
 const updateText = (element) => {
   const text = element.getAttribute("data-value");
   element.innerText = text;
+  return text;
 };
 
 /**
@@ -120,7 +121,7 @@ const updateText = (element) => {
 const truncateText = (
   element = document.querySelector(".selected .img-text")
 ) => {
-  updateText(element);
+  const text = updateText(element);
   if (element.scrollWidth > element.clientWidth) {
     const lettersToKeep =
       Math.floor((element.clientWidth / element.scrollWidth) * text.length) - 4;
