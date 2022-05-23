@@ -3,6 +3,7 @@ body{
     width: 100vw;
     padding: 20px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 .outerbox{
     height: 80%;
