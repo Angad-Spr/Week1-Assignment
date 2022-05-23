@@ -5,6 +5,11 @@ body{
     box-sizing: border-box;
     overflow: hidden;
 }
+
+body *::-webkit-scrollbar {
+    display: none;
+  }
+  
 .outerbox{
     height: 80%;
     width: 60%;
