@@ -1,26 +1,45 @@
 import data from "./data.json" assert { type: "json" };
 
+/**
+ *
+ * @param {json data} dataInstance
+ * @returns HTML-Element
+ *  <li class="">
+ *     <div class="preview-container">
+ *         <img src="${dataInstance.previewImage}">
+ *     </div>
+ *    <span class="img-text" data-value="${dataInstance.title}">
+ *       ${dataInstance.title}
+ *    </span>
+ *  </li>
+ */
 const markup = (dataInstance) => {
-  return `
-        <li class="">
-            <div class="preview-container">
-                <img src="${dataInstance.previewImage}">
-            </div>
-            <span class="img-text" data-value="${dataInstance.title}">
-              ${dataInstance.title}
-            </span> 
-        </li>
-`;
+  const listItem = document.createElement("li");
+
+  const preview = document.createElement("div");
+  preview.classList.add("preview-container");
+
+  const img = document.createElement("img");
+  img.setAttribute("src", dataInstance.previewImage);
+
+  const imgText = document.createElement("span");
+  imgText.classList.add("img-text");
+  imgText.setAttribute("data-value", dataInstance.title);
+
+  preview.appendChild(img);
+  listItem.appendChild(preview);
+  listItem.appendChild(imgText);
+
+  return listItem;
 };
 
 /**
  *  Initial Data Loading and Formatting
  */
 const addDataToPage = () => {
-  let ulData = "";
-  data.forEach((dataInstance) => (ulData += markup(dataInstance)));
   const list = document.querySelector("ul");
-  list.innerHTML = ulData;
+  list.innerHTML = "";
+  data.forEach((dataInstance) => list.appendChild(markup(dataInstance)));
 
   // Truncate
   Array.from(list.children).forEach((item) =>
