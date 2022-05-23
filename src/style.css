@@ -1,9 +1,17 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    padding: 20px;
+    box-sizing: border-box;
+}
 .outerbox{
-    height: 80vh;
-    width: 60vw;
+    height: 80%;
+    width: 60%;
     margin: auto;
     margin-top: 5%;
     display: flex;
+    overflow-x: scroll;
+    min-height: 400px;
 }
 
 .listbox{
@@ -11,7 +19,7 @@
 }
 
 .imagebox{
-    flex-grow: 1;
+    flex: 1 1 400px;
 }
 
 ul
@@ -36,7 +44,6 @@ li.selected
 
 .image-container{
     margin: auto;
-    margin-left: 10px;
     width: 100%;
     height: 95%;
     align-content: center;
@@ -46,8 +53,11 @@ li.selected
 .textbox{
     box-sizing: border-box;
     width: 100%;
-    margin-left: 10px;
 
+}
+
+.imagebox{
+    margin-left: 10px;
 }
 
 .preview-container{
@@ -77,3 +87,21 @@ img
     /* The CSS way */
     /* text-overflow: ellipsis; */
 } 
+
+
+@media screen and (max-width: 1200px) {
+    .outerbox{
+        width: auto;
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .outerbox{
+        max-width: none;
+    }
+
+    .imagebox{
+        flex: 1 0.2 400px;
+    }
+}
