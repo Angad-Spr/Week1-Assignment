@@ -1,0 +1,136 @@
+[
+    {
+        "label": "main.js",
+        "isAsset": true,
+        "statSize": 17382,
+        "groups": [
+            {
+                "label": "src",
+                "path": "./src",
+                "statSize": 9115,
+                "groups": [
+                    {
+                        "id": 426,
+                        "label": "style.css",
+                        "path": "./src/style.css",
+                        "statSize": 2014
+                    },
+                    {
+                        "id": 610,
+                        "label": "data.js",
+                        "path": "./src/data.js",
+                        "statSize": 1204
+                    },
+                    {
+                        "id": 506,
+                        "label": "script.js + 1 modules (concatenated)",
+                        "path": "./src/script.js + 1 modules (concatenated)",
+                        "statSize": 5897,
+                        "concatenated": true,
+                        "groups": [
+                            {
+                                "label": "src",
+                                "path": "./src/script.js + 1 modules (concatenated)/src",
+                                "statSize": 5897,
+                                "groups": [
+                                    {
+                                        "id": null,
+                                        "label": "script.js",
+                                        "path": "./src/script.js + 1 modules (concatenated)/src/script.js",
+                                        "statSize": 4757,
+                                        "inaccurateSizes": true
+                                    },
+                                    {
+                                        "id": null,
+                                        "label": "style.css",
+                                        "path": "./src/script.js + 1 modules (concatenated)/src/style.css",
+                                        "statSize": 1140,
+                                        "inaccurateSizes": true
+                                    }
+                                ],
+                                "inaccurateSizes": true
+                            }
+                        ]
+                    }
+                ],
+                "parsedSize": 0,
+                "gzipSize": 0
+            },
+            {
+                "label": "node_modules",
+                "path": "./node_modules",
+                "statSize": 8267,
+                "groups": [
+                    {
+                        "label": "css-loader/dist/runtime",
+                        "path": "./node_modules/css-loader/dist/runtime",
+                        "statSize": 2382,
+                        "groups": [
+                            {
+                                "id": 645,
+                                "label": "api.js",
+                                "path": "./node_modules/css-loader/dist/runtime/api.js",
+                                "statSize": 2318
+                            },
+                            {
+                                "id": 81,
+                                "label": "noSourceMaps.js",
+                                "path": "./node_modules/css-loader/dist/runtime/noSourceMaps.js",
+                                "statSize": 64
+                            }
+                        ],
+                        "parsedSize": 0,
+                        "gzipSize": 0
+                    },
+                    {
+                        "label": "style-loader/dist/runtime",
+                        "path": "./node_modules/style-loader/dist/runtime",
+                        "statSize": 5885,
+                        "groups": [
+                            {
+                                "id": 379,
+                                "label": "injectStylesIntoStyleTag.js",
+                                "path": "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js",
+                                "statSize": 2500
+                            },
+                            {
+                                "id": 569,
+                                "label": "insertBySelector.js",
+                                "path": "./node_modules/style-loader/dist/runtime/insertBySelector.js",
+                                "statSize": 1005
+                            },
+                            {
+                                "id": 216,
+                                "label": "insertStyleElement.js",
+                                "path": "./node_modules/style-loader/dist/runtime/insertStyleElement.js",
+                                "statSize": 286
+                            },
+                            {
+                                "id": 565,
+                                "label": "setAttributesWithoutAttributes.js",
+                                "path": "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js",
+                                "statSize": 300
+                            },
+                            {
+                                "id": 795,
+                                "label": "styleDomAPI.js",
+                                "path": "./node_modules/style-loader/dist/runtime/styleDomAPI.js",
+                                "statSize": 1412
+                            },
+                            {
+                                "id": 589,
+                                "label": "styleTagTransform.js",
+                                "path": "./node_modules/style-loader/dist/runtime/styleTagTransform.js",
+                                "statSize": 382
+                            }
+                        ],
+                        "parsedSize": 0,
+                        "gzipSize": 0
+                    }
+                ],
+                "parsedSize": 0,
+                "gzipSize": 0
+            }
+        ]
+    }
+]
